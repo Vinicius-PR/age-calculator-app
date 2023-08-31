@@ -177,8 +177,8 @@ header {
   gap: 0.8rem;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+footer { font-size: 11px; text-align: center; }
+footer a { color: hsl(228, 45%, 44%); }
 
 @media (max-width:840px) {
   main {
