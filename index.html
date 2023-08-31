@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body>
+
+  <header>
+    <h1>Age Calculator</h1>
+  </header>
+  <main>
+
+    <form action="" method="get" class="age-form">
+      <div class="input-container">
+        <div class="input-days">
+          <label for="days">DAY</label>
+          <input required min="1" max="31" inputmode="numeric" type="number" name="days" id="days">
+          <span class="span-error"></span>
+        </div>
+        <div class="input-months">
+          <label for="months">MONTH</label>
+          <input required min="1" max="12" type="number" inputmode="numeric" name="months" id="months">
+          <span class="span-error"></span>
+        </div>
+        <div class="input-year">
+          <label for="year">YEAR</label>
+          <input required min="0" type="number" inputmode="numeric" name="year" id="year">
+          <span class="span-error"></span>
+        </div>
+      </div>
+
+      <div class="submit-line-btn">
+        <button type="submit">
+          <img src="./assets/images/icon-arrow.svg" alt="">
+        </button>
+        <hr/>
+      </div>
+    </form>
+
+    <section class="output-container">
+      <div class="output-years">
+        <span class="result-years">--</span>
+        <p>years</p>
+      </div>
+      <div class="output-months">
+        <span class="result-months">--</span>
+        <p>months</p>
+      </div>
+      <div class="output-days">
+        <span class="result-days">--</span>
+        <p>days</p>
+      </div>
+    </section>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. <br />
+    Coded by <a target="_blank" href="https://www.linkedin.com/in/vinicius-paula-resende/">Vinicius Paula Resende</a>.
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>

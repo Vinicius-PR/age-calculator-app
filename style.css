@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Italic.ttf') format('TrueType');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Bold.ttf') format('TrueType');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf') format('TrueType');
+  font-style: italic;
+  font-weight: 800;
+}
+
+:root {
+  --black: #151515;
+  --gray: #716F6F;
+  --light-gray: #F0F0F0;
+  --line: #DCDCDC;
+  --purple: #854DFF;
+  --white: #FFFFFF;
+  --red: #FF5959;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+}
+
+main {
+  background-color: var(--white);
+  width: 52.5rem;
+  padding: 3.5rem;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 24px;
+}
+
+header {
+  text-align: center;
+  color: var(--purple);
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.input-container span {
+  display: none;
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.input-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-container label {
+  color: var(--gray);
+  font-size: 0.875rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+.input-container input {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.32px;
+  padding: 0.75rem 1.5rem;
+  width: 10rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: 0;
+}
+
+.input-container input:hover,
+.input-container input:focus {
+  cursor: pointer;
+  border-color: var(--purple);
+}
+
+.error span {
+  color: var(--red);
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.error input {
+  border-color: var(--red);
+}
+
+.error label {
+  color: red;
+}
+
+.submit-line-btn {
+  position: relative;
+  text-align: end;
+}
+
+.submit-line-btn hr{
+ position: absolute;
+ width: 100%;
+ top: 50%;
+ height: 1px;
+ border: none;
+ background-color: var(--line);
+}
+
+.submit-line-btn button{
+  position: relative; /* Set position to relative so the z-index propety works */
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--purple);
+  transition: all 0.2s linear;
+  z-index: 1;
+}
+
+.submit-line-btn button:hover {
+  background-color: var(--black);
+  cursor: pointer;
+}
+
+.output-container {
+  line-height: 110%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 6.5rem;
+}
+
+.output-container span {
+  color: var(--purple);
+}
+
+.output-container div {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (max-width:840px) {
+  main {
+    width: auto;
+  }
+}
+
+@media (max-width:768px) {
+  main {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width:645px) {
+  header {
+    font-size: 1.5rem;
+  }
+
+  .input-container {
+    gap: 1rem;
+  }
+
+  .input-container div {
+    flex: 1;
+  }
+
+  .input-container input {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    font-size: 1.25rem;
+  }
+
+  .submit-line-btn {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .submit-line-btn button {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .submit-line-btn img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .output-container {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    font-size: 1.2rem;
+  }
+
+  .error span {
+    font-size: 0.7rem;
+  }
+
+  .submit-line-btn button {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .submit-line-btn img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    font-size: 1rem;
+  }
+
+  .output-container {
+    font-size: 2rem;
+  } 
+}
