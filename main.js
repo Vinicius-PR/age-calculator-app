@@ -40,7 +40,7 @@ function isAnInvalidDate(year, month, day) {
 }
 
 function animate (element, value) {
-  const speed = 0.5;
+  const speed = 10;
   let startPoint = 0
   const endPoint = value
 
@@ -91,6 +91,11 @@ function dateDiff(birthDate) {
 function calculateAge() {
   // Have to decrease the month value by 1 because month is 0 based. So it goes from 0 (January) until 11 (Dezember).
   const monthValue = monthInput.value - 1
+
+  // blur method is called to close the keyboard on mobile.
+  dayInput.blur()
+  monthInput.blur()
+  yearInput.blur()
 
   if (isAnInvalidDate(yearInput.value, monthValue, dayInput.value)) {
     setErros("Must be a valid date")
