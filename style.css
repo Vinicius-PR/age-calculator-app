@@ -133,19 +133,21 @@ header {
 .submit-line-btn {
   position: relative;
   text-align: end;
+  margin: 0.4rem 0;
 }
 
-.submit-line-btn hr{
- position: absolute;
- width: 100%;
- top: 50%;
- height: 1px;
- border: none;
- background-color: var(--line);
+.submit-line-btn hr {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 1px;
+  border: none;
+  background-color: var(--line);
 }
 
-.submit-line-btn button{
-  position: relative; /* Set position to relative so the z-index propety works */
+.submit-line-btn button {
+  position: relative;
+  /* Set position to relative so the z-index propety works */
   width: 6rem;
   height: 6rem;
   border-radius: 100%;
@@ -177,8 +179,14 @@ header {
   gap: 0.8rem;
 }
 
-footer { font-size: 11px; text-align: center; }
-footer a { color: hsl(228, 45%, 44%); }
+footer {
+  font-size: 11px;
+  text-align: center;
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+}
 
 @media (max-width:840px) {
   main {
@@ -258,5 +266,28 @@ footer a { color: hsl(228, 45%, 44%); }
 
   .output-container {
     font-size: 2rem;
-  } 
+  }
+}
+
+@media (max-height: 620px) {
+  main {
+    width: auto;
+  }
+
+  header {
+    font-size: 1.5rem;
+  }
+
+  .submit-line-btn button {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .input-container input {
+    font-size: 1rem;
+  }
+
+  .output-container {
+    font-size: 3rem;
+  }
 }

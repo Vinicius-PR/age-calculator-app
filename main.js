@@ -39,23 +39,23 @@ function isAnInvalidDate(year, month, day) {
   return false
 }
 
-function animate (element, value) {
+function animate(element, value) {
   const speed = 10;
   let startPoint = 0
   const endPoint = value
 
-  let counter = setInterval(function() {
-    ++startPoint
-    element.innerText = startPoint
-
+  let counter = setInterval(function () {
     if (startPoint === endPoint) {
       clearInterval(counter)
     }
+
+    ++startPoint
+    element.innerText = startPoint
   }, speed)
 }
 
 function printValuesResult(years, months, days) {
-  animate(yearsResult ,years)
+  animate(yearsResult, years)
   animate(monthsResult, months)
   animate(daysResult, days)
 }
@@ -75,12 +75,10 @@ function dateDiff(birthDate) {
   let dayDiff = nowDate.getDate() - birthDate.getDate()
 
   if (dayDiff < 0) {
-    console.log('day less then 0')
     if (monthDiff > 0) {
       monthDiff--
     } else {
       yearDiff--
-      console.log('monthDiff = 11')
       monthDiff = 11
     }
     dayDiff += daysInMonth[birthDate.getMonth()]
