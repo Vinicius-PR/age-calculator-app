@@ -44,14 +44,18 @@ function animate(element, value) {
   let startPoint = 0
   const endPoint = value
 
-  let counter = setInterval(function () {
-    if (startPoint === endPoint) {
-      clearInterval(counter)
-    }
+  if (value === 0) {
+    element.innerText = value
+  } else {
+    let counter = setInterval(function () {
+      ++startPoint
+      element.innerText = startPoint
 
-    ++startPoint
-    element.innerText = startPoint
-  }, speed)
+      if (startPoint === endPoint) {
+        clearInterval(counter)
+      }
+    }, speed)
+  }
 }
 
 function printValuesResult(years, months, days) {
@@ -60,29 +64,29 @@ function printValuesResult(years, months, days) {
   animate(daysResult, days)
 }
 
-function dateDiff(birthDate) {
-  let nowDate = new Date()
-  const birthYear = birthDate.getFullYear()
-  const daysInMonth = checkLeapYear(birthYear)
+function dateDiff(birthDate, nowDate) {
+  let yearDiff = nowDate.getFullYear() - birthDate.getFullYear();
+  let monthDiff = nowDate.getMonth() - birthDate.getMonth();
+  let dayDiff = nowDate.getDate() - birthDate.getDate();
 
-  let yearDiff = nowDate.getFullYear() - birthYear
-  let monthDiff = nowDate.getMonth() - birthDate.getMonth()
-
-  if (monthDiff < 0) {
-    yearDiff--
-    monthDiff += 12
-  }
-  let dayDiff = nowDate.getDate() - birthDate.getDate()
-
+  // Adjust the days if it's negative.
   if (dayDiff < 0) {
-    if (monthDiff > 0) {
-      monthDiff--
-    } else {
-      yearDiff--
-      monthDiff = 11
-    }
-    dayDiff += daysInMonth[birthDate.getMonth()]
+    /* 
+      Get the value of the last day of the previous month. To do this, must:
+      1 - set the day value to 0 in the constructor to get previous date. It will return a date object of the last day of the previous month.
+      2 - Use getDate() method to get the value of the date. It can be 28, 29, 30 or 31.
+    */
+    const prevMonth = new Date(nowDate.getFullYear(), nowDate.getMonth(), 0);
+    dayDiff += prevMonth.getDate();
+    monthDiff--;
   }
+
+  // Adjust the months if it's negative.
+  if (monthDiff < 0) {
+    monthDiff += 12;
+    yearDiff--;
+  }
+
   printValuesResult(yearDiff, monthDiff, dayDiff)
 }
 
@@ -104,10 +108,10 @@ function calculateAge() {
   const now = new Date()
 
   if (birthDate > now) {
-    setErros("Must be in the future")
+    setErros("Must be in the past")
   } else {
     clearErrors()
-    dateDiff(birthDate)
+    dateDiff(birthDate, now)
   }
 }
 
