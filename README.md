@@ -29,14 +29,14 @@ This is a simple project, so I did not use any framework or library. I used:
 
 ## The logic
 
-To explain the logic. I'll show an example.
+To explain the logic, I'll show an example.
 Date format will be: day/month/year
 
 Lets supose that:
-A: The now day will be 03/01/2025
-B: The birth date that the user provided is 24/12/1993
+* A: The now day will be 03/01/2025
+* B: The birth date that the user provided is 24/12/1993
 
-performing the subtraction:
+Performing the subtraction:
 
 ```
   (B):  03 / 01 / 2025
