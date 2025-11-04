@@ -201,6 +201,10 @@ footer a {
 }
 
 @media (max-width:645px) {
+  main {
+    margin: 0 1rem;
+    border-bottom-right-radius: 100px;
+  }
   header {
     font-size: 1.5rem;
   }
@@ -239,7 +243,7 @@ footer a {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
   header {
     font-size: 1.2rem;
   }
@@ -257,6 +261,15 @@ footer a {
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  .output-container {
+    font-size: 2.5rem !important;
+  }
+
+  .input-container input {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 320px) {
@@ -266,6 +279,26 @@ footer a {
 
   .output-container {
     font-size: 2rem;
+  }
+}
+
+@media (max-height: 708px) {
+  body {
+    margin: 1rem 0;
+    gap: 1rem
+  }
+
+  main {
+    padding:2rem;
+  }
+
+  .output-container {
+    font-size: 3.5rem;
+  }
+
+  .submit-line-btn button {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
